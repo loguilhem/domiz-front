@@ -1,0 +1,24 @@
+.brand-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-image {
+  display: block;
+  width: clamp(112px, 13vw, 168px);
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .brand-image {
+    width: 112px;
+    max-height: 54px;
+  }
+}

@@ -1,0 +1,376 @@
+.home-page {
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 21% 28%, #fff 0 2px, transparent 3px 100%),
+    radial-gradient(circle at 74% 64%, #fff 0 2px, transparent 3px 100%),
+    linear-gradient(135deg, #ffef5a 0%, #ff5b9a 45%, #2ad7ff 100%);
+  background-size: 18px 18px, 24px 24px, 100% 100%;
+  color: #101014;
+}
+
+.manga-hero {
+  position: relative;
+  min-height: 100svh;
+  padding: 28px;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+.manga-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    repeating-radial-gradient(circle at 68% 48%, transparent 0 12px, rgba(16, 16, 20, 0.16) 13px 14px),
+    repeating-linear-gradient(108deg, transparent 0 18px, rgba(255, 255, 255, 0.35) 19px 22px);
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+}
+
+.manga-hero::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  z-index: -1;
+  border: 5px solid #101014;
+  box-shadow: 9px 9px 0 #101014;
+  pointer-events: none;
+}
+
+.speed-lines {
+  position: absolute;
+  inset: -22%;
+  z-index: -2;
+  background: repeating-conic-gradient(from -18deg at 72% 44%, rgba(16, 16, 20, 0.3) 0deg 1.4deg, transparent 1.6deg 7deg);
+  opacity: 0.5;
+  animation: pulseLines 3.4s ease-in-out infinite;
+}
+
+.ink-burst {
+  position: absolute;
+  width: 240px;
+  aspect-ratio: 1;
+  z-index: -1;
+  background: #101014;
+  clip-path: polygon(50% 0, 57% 31%, 83% 11%, 70% 39%, 100% 50%, 70% 61%, 84% 90%, 57% 69%, 50% 100%, 43% 69%, 16% 90%, 30% 61%, 0 50%, 30% 39%, 17% 11%, 43% 31%);
+}
+
+.ink-burst-left {
+  left: clamp(-150px, -9vw, -72px);
+  bottom: 7%;
+  transform: rotate(-10deg);
+}
+
+.ink-burst-right {
+  top: 15%;
+  right: clamp(-160px, -8vw, -80px);
+  transform: rotate(18deg) scale(1.25);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 4px solid #101014;
+  box-shadow: 7px 7px 0 #101014;
+  backdrop-filter: blur(8px);
+}
+
+.brand-link,
+.topbar-link,
+.login-button {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar-link {
+  padding: 10px 18px;
+  font-size: 0.98rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #ffef5a;
+  border: 3px solid #101014;
+  box-shadow: 4px 4px 0 #101014;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: center;
+  width: min(1180px, 100%);
+  min-height: calc(100svh - 128px);
+  margin: 0 auto;
+  padding: clamp(44px, 6vw, 74px) 0 26px;
+}
+
+.hero-copy {
+  position: relative;
+  max-width: 670px;
+}
+
+.manga-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 0 24px;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  background: #fff;
+  border: 3px solid #101014;
+  box-shadow: 5px 5px 0 #101014;
+  transform: rotate(-2deg);
+}
+
+.hero-copy h1 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(4.2rem, 10vw, 8.8rem);
+  line-height: 0.86;
+  font-weight: 1000;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    4px 4px 0 #101014,
+    8px 8px 0 #101014,
+    12px 12px 0 #ffef5a;
+}
+
+.hero-text {
+  width: min(570px, 100%);
+  margin: 34px 0 0;
+  padding: 18px 20px;
+  font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+  line-height: 1.35;
+  font-weight: 780;
+  background: rgba(255, 255, 255, 0.88);
+  border: 4px solid #101014;
+  box-shadow: 7px 7px 0 #101014;
+}
+
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: min(100%, 360px);
+  min-height: 74px;
+  margin-top: 28px;
+  padding: 0 34px;
+  box-sizing: border-box;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  font-weight: 1000;
+  text-transform: uppercase;
+  background: #101014;
+  color: #fff;
+  border: 5px solid #fff;
+  outline: 5px solid #101014;
+  box-shadow: 10px 10px 0 #ffef5a;
+  transform: rotate(-1deg);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.login-button:hover,
+.login-button:focus-visible {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 14px 14px 0 #2ad7ff;
+}
+
+.login-button:focus-visible {
+  outline-color: #2ad7ff;
+}
+
+.poster {
+  display: grid;
+  place-items: center;
+}
+
+.poster-frame {
+  position: relative;
+  display: grid;
+  width: min(420px, 100%);
+  aspect-ratio: 0.78;
+  place-items: center;
+  background:
+    radial-gradient(circle at center, #fff 0 8%, transparent 9% 100%),
+    repeating-radial-gradient(circle at center, #fff 0 7px, #ffe5f0 8px 14px);
+  border: 6px solid #101014;
+  box-shadow: 14px 14px 0 #101014;
+  transform: rotate(3deg);
+  overflow: hidden;
+}
+
+.poster-frame::before,
+.poster-frame::after {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(16, 16, 20, 0.28) 0deg 1deg, transparent 1.2deg 9deg);
+}
+
+.poster-frame::after {
+  inset: auto -20% -12%;
+  height: 42%;
+  background: #2ad7ff;
+  border-top: 5px solid #101014;
+  transform: rotate(-7deg);
+}
+
+.domiz-logo,
+.house-emblem,
+.action-label {
+  position: relative;
+  z-index: 1;
+}
+
+.domiz-logo {
+  display: grid;
+  place-items: center;
+  padding: 26px 18px;
+  color: #101014;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+}
+
+.logo-kicker,
+.logo-main {
+  display: block;
+  font-weight: 1000;
+  letter-spacing: 0;
+  line-height: 0.75;
+  -webkit-text-stroke: 3px #101014;
+}
+
+.logo-kicker {
+  font-size: clamp(4.2rem, 10vw, 7.5rem);
+  color: #ffef5a;
+}
+
+.logo-main {
+  font-size: clamp(5.2rem, 12vw, 9.5rem);
+  color: #ff5b9a;
+  text-shadow: 8px 8px 0 #fff;
+}
+
+.house-emblem {
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  margin-top: -28px;
+  font-size: 3rem;
+  color: #fff;
+  background: #101014;
+  border: 5px solid #fff;
+  outline: 5px solid #101014;
+  box-shadow: 8px 8px 0 #ffef5a;
+  transform: rotate(9deg);
+}
+
+.action-label {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  background: #fff;
+  border: 4px solid #101014;
+  box-shadow: 5px 5px 0 #101014;
+}
+
+.action-label-top {
+  top: 18px;
+  left: 18px;
+  transform: rotate(-7deg);
+}
+
+.action-label-bottom {
+  right: 18px;
+  bottom: 24px;
+  background: #ffef5a;
+  transform: rotate(6deg);
+}
+
+@keyframes pulseLines {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.04) rotate(1deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .manga-hero {
+    padding: 18px;
+  }
+
+  .manga-hero::after {
+    inset: 10px;
+    border-width: 4px;
+    box-shadow: 6px 6px 0 #101014;
+  }
+
+  .topbar {
+    padding: 12px;
+    box-shadow: 5px 5px 0 #101014;
+  }
+
+  .topbar-link {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 42px 0 28px;
+  }
+
+  .hero-copy h1 {
+    max-width: 9ch;
+  }
+
+  .poster-frame {
+    width: min(360px, 92vw);
+    transform: rotate(1deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .manga-tag {
+    font-size: 0.78rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.25rem, 18vw, 4.8rem);
+    text-shadow:
+      3px 3px 0 #101014,
+      6px 6px 0 #101014,
+      9px 9px 0 #ffef5a;
+  }
+
+  .hero-text {
+    padding: 14px 15px;
+  }
+
+  .login-button {
+    min-height: 66px;
+    padding: 0 24px;
+  }
+}
