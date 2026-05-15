@@ -6,11 +6,10 @@ export function InviteMemberForm({ familyName, onCancel, onSubmit }) {
     const formData = new FormData(event.currentTarget)
 
     onSubmit({
-      id: `invite-${Date.now()}`,
-      firstName: formData.get('firstName') || 'Invité',
-      lastName: '',
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
       email: formData.get('email'),
-      birthDate: '',
+      birthDate: formData.get('birthDate'),
       role: formData.get('role'),
       status: 'Invitation envoyée',
     })
@@ -22,11 +21,19 @@ export function InviteMemberForm({ familyName, onCancel, onSubmit }) {
       <div className="form-grid">
         <div className="form-field">
           <label htmlFor="invite-first-name">Prénom</label>
-          <input id="invite-first-name" name="firstName" type="text" />
+          <input id="invite-first-name" name="firstName" type="text" required />
+        </div>
+        <div className="form-field">
+          <label htmlFor="invite-last-name">Nom</label>
+          <input id="invite-last-name" name="lastName" type="text" required />
         </div>
         <div className="form-field">
           <label htmlFor="invite-email">Email</label>
           <input id="invite-email" name="email" type="email" required />
+        </div>
+        <div className="form-field">
+          <label htmlFor="invite-birth-date">Date de naissance</label>
+          <input id="invite-birth-date" name="birthDate" type="date" required />
         </div>
         <div className="form-field">
           <label htmlFor="invite-role">Rôle prévu</label>

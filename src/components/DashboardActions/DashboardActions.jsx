@@ -3,21 +3,25 @@ import {
   FaChevronDown,
   FaGear,
   FaGlobe,
+  FaRightFromBracket,
   FaMoon,
   FaSun,
 } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../providers/AuthProvider.jsx'
 import { useAppPreferences } from '../../providers/AppPreferences.jsx'
 import './DashboardActions.css'
 
 const settingsLinks = [
   { key: 'family', to: '/famille' },
-  { key: 'tasks', to: '#' },
-  { key: 'categories', to: '#' },
+  { key: 'tasks', to: '/taches' },
+  { key: 'categories', to: '/categories' },
   { key: 'rewards', to: '#' },
 ]
 
 export function DashboardActions() {
+  const { logout } = useAuth()
+  const navigate = useNavigate()
   const {
     language,
     languageNames,
@@ -109,6 +113,18 @@ export function DashboardActions() {
         onClick={toggleTheme}
       >
         {isDark ? <FaSun aria-hidden="true" /> : <FaMoon aria-hidden="true" />}
+      </button>
+
+      <button
+        className="icon-action"
+        type="button"
+        aria-label="Déconnexion"
+        onClick={() => {
+          logout()
+          navigate('/connexion', { replace: true })
+        }}
+      >
+        <FaRightFromBracket aria-hidden="true" />
       </button>
     </div>
   )

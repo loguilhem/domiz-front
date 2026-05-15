@@ -12,7 +12,7 @@ export function FamilyMemberForm({ familyName, initialValues, onCancel, onSubmit
       email: formData.get('email'),
       birthDate: formData.get('birthDate'),
       role: formData.get('role'),
-      status: 'Membre local',
+      status: initialValues?.status ?? 'Membre local',
     })
   }
 

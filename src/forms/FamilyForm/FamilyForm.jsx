@@ -6,9 +6,7 @@ export function FamilyForm({ onCancel, onSubmit }) {
     const formData = new FormData(event.currentTarget)
 
     onSubmit({
-      id: `family-${Date.now()}`,
       name: formData.get('name'),
-      members: [],
     })
   }
 

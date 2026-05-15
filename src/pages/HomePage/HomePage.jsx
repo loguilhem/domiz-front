@@ -15,9 +15,14 @@ export function HomePage() {
           <Link className="brand-link" to="/" aria-label="Accueil Domiz">
             <Logo />
           </Link>
-          <Link className="topbar-link" to="/dashboard">
-            Connexion
-          </Link>
+          <div className="topbar-actions">
+            <Link className="topbar-link" to="/connexion">
+              Connexion
+            </Link>
+            <Link className="topbar-link topbar-link-primary" to="/inscription">
+              Rejoindre Domiz
+            </Link>
+          </div>
         </nav>
 
         <div className="hero-grid">
@@ -33,10 +38,15 @@ export function HomePage() {
               Domiz rassemble ton foyer, tes routines et tes petits plans du
               quotidien dans une interface qui claque.
             </p>
-            <Link className="login-button" to="/dashboard">
-              <FaDoorOpen aria-hidden="true" />
-              <span>Connexion</span>
-            </Link>
+            <div className="hero-actions">
+              <Link className="login-button" to="/connexion">
+                <FaDoorOpen aria-hidden="true" />
+                <span>Connexion</span>
+              </Link>
+              <Link className="login-button join-button" to="/inscription">
+                Rejoindre Domiz
+              </Link>
+            </div>
           </div>
 
           <div className="poster" aria-label="Logo Domiz style manga">

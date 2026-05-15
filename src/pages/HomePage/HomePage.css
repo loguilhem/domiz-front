@@ -73,6 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 14px;
   max-width: 1180px;
   margin: 0 auto;
   padding: 16px 18px;
@@ -97,6 +98,18 @@
   background: #ffef5a;
   border: 3px solid #101014;
   box-shadow: 4px 4px 0 #101014;
+}
+
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.topbar-link-primary {
+  color: #fff;
+  background: #101014;
 }
 
 .hero-grid {
@@ -158,14 +171,20 @@
   box-shadow: 7px 7px 0 #101014;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
 .login-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  min-width: min(100%, 360px);
+  min-width: min(100%, 300px);
   min-height: 74px;
-  margin-top: 28px;
   padding: 0 34px;
   box-sizing: border-box;
   font-size: clamp(1.3rem, 2.8vw, 2rem);
@@ -180,10 +199,21 @@
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
+.join-button {
+  color: #101014;
+  background: #fff;
+  box-shadow: 10px 10px 0 #2ad7ff;
+}
+
 .login-button:hover,
 .login-button:focus-visible {
   transform: translate(-3px, -3px) rotate(-1deg);
   box-shadow: 14px 14px 0 #2ad7ff;
+}
+
+.join-button:hover,
+.join-button:focus-visible {
+  box-shadow: 14px 14px 0 #ffef5a;
 }
 
 .login-button:focus-visible {
@@ -327,8 +357,14 @@
   }
 
   .topbar {
+    align-items: flex-start;
+    flex-direction: column;
     padding: 12px;
     box-shadow: 5px 5px 0 #101014;
+  }
+
+  .topbar-actions {
+    justify-content: flex-start;
   }
 
   .topbar-link {
